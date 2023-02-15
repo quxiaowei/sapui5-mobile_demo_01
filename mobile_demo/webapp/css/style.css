@@ -1,0 +1,25 @@
+/* Enter your custom styles here */
+.mainFuncItem{
+    text-align: center;
+    font-size: 10px;
+}
+
+.mainFuncItemOutter{
+    align-items: center;
+}
+
+.mainFuncContainer{
+    padding: 10px 0;
+}
+
+.orderTitle{
+    font-size: 14px;
+}
+.orderDate, .orderCurrency{
+    font-size: 9px;
+    color:grey;
+}
+
+.orderCurrency {
+    margin-left:5px;
+}

@@ -1,0 +1,178 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <f:GridContainer 
+        xmlns="sap.m" 
+        xmlns:f="sap.f" 
+        xmlns:card="sap.f.cards" 
+        xmlns:grid="sap.ui.layout.cssgrid" 
+        id="demoGrid" class="sapUiSmallMargin"
+        minHeight="40px">
+        
+    <f:layout>
+        <f:GridContainerSettings rowSize="40px" columnSize="80px" gap="8px" />
+    </f:layout>
+    <f:layoutM>
+        <f:GridContainerSettings rowSize="35px" columnSize="70px" gap="8px" />
+    </f:layoutM>
+    <f:layoutS>
+        <f:GridContainerSettings rowSize="35px" columnSize="70px" gap="8px" />
+    </f:layoutS>
+    <f:layoutXS>
+        <f:GridContainerSettings rowSize="35px" columnSize="70px" gap="8px" />
+    </f:layoutXS>
+
+    <!-- <f:Card  class="sapUiTinyMarginBottom">
+        <f:content>
+        <Text text="text2" class="sapUiTinyMargin"></Text>
+        </f:content>
+    </f:Card> -->
+
+    <!-- 主功能区 -->
+    <f:Card class="sapUiTinyMarginBottom mainFuncContainer">
+        <f:layoutData>
+        <f:GridContainerItemLayoutData columns="3" />
+        </f:layoutData>
+
+        <f:content>
+        <grid:CSSGrid id="main_func"
+            gridTemplateColumns="1fr 1fr 1fr 1fr"
+            gridGap="2px">
+            <VBox class="mainFuncItemOutter sapUiTinyMargin">
+            <Avatar
+                src="sap-icon://approvals"
+                displaySize="XS"
+                displayShape="Circle"
+                backgroundColor="Accent1"/>
+            <Text text="我审批" class="mainFuncItem" textAlign="Center"></Text>
+            </VBox>
+            <VBox class="mainFuncItemOutter sapUiTinyMargin">
+            <Avatar
+                src="sap-icon://opportunities"
+                displaySize="XS"
+                displayShape="Circle"
+                backgroundColor="Accent2"/>
+            <Text text="我发起" class="mainFuncItem" textAlign="Center"></Text>
+            </VBox>
+            <VBox class="mainFuncItemOutter sapUiTinyMargin">
+            <Avatar
+                src="sap-icon://activity-individual"
+                displaySize="XS"
+                displayShape="Circle"
+                backgroundColor="Accent8"/>
+            <Text text="发票" class="mainFuncItem" textAlign="Center"></Text>
+            </VBox>
+            <VBox class="mainFuncItemOutter sapUiTinyMargin">
+            <Avatar
+                src="sap-icon://business-objects-experience"
+                displaySize="XS"
+                displayShape="Circle"
+                backgroundColor="Accent9"/>
+            <Text text="报表" class="mainFuncItem" textAlign="Center"></Text>
+            </VBox>
+            <VBox class="mainFuncItemOutter sapUiTinyMargin">
+            <Avatar
+                src="sap-icon://map-3"
+                displaySize="XS"
+                displayShape="Circle"
+                backgroundColor="Accent5"/>
+            <Text text="派遣单" class="mainFuncItem" textAlign="Center"></Text>
+            </VBox>
+            <VBox class="mainFuncItemOutter sapUiTinyMargin">
+            <Avatar
+                src="sap-icon://expense-report"
+                displaySize="XS"
+                displayShape="Circle"
+                backgroundColor="Accent6"/>
+            <Text text="报销单" class="mainFuncItem" textAlign="Center"></Text>
+            </VBox>
+            <VBox class="mainFuncItemOutter sapUiTinyMargin">
+            <Avatar
+                src="sap-icon://newspaper"
+                displaySize="XS"
+                displayShape="Circle"
+                backgroundColor="Accent7"/>
+            <Text text="公共" class="mainFuncItem" textAlign="Center"></Text>
+            </VBox>
+            <VBox class="mainFuncItemOutter sapUiTinyMargin">
+            <Avatar
+                src="sap-icon://overflow"
+                displaySize="XS"
+                displayShape="Circle"
+                backgroundColor="Accent10"/>
+            <Text text="其他" class="mainFuncItem" textAlign="Center"></Text>
+            </VBox>
+        </grid:CSSGrid>
+        </f:content>
+    </f:Card>
+
+    <!-- 待审批 -->
+    <f:Card  class="sapUiTinyMarginBottom">
+        <f:layoutData>
+        <f:GridContainerItemLayoutData columns="3" />
+        </f:layoutData>
+        <f:header>
+        <card:Header title="待审批" subtitle="共三条待审批" statusText="3"
+                iconSrc="sap-icon://approvals"
+                iconBackgroundColor="Accent1"/>
+        </f:header>
+    </f:Card>
+
+    <!-- <f:Card class="sapUiTinyMarginBottom">
+        <f:header>
+        <card:NumericHeader title="进行中" sideIndicatorsAlignment="End">
+            <card:NumericSideIndicator id="_IDGenNumericSideIndicator1" number="3"/>
+        </card:NumericHeader>
+        </f:header>
+    </f:Card> -->
+
+    <!-- <f:Card class="sapUiTinyMarginBottom">
+        <f:header>
+        </f:header>
+    </f:Card> -->
+
+    <f:Card class="sapUiTinyMarginBottom">
+        <f:layoutData>
+        <f:GridContainerItemLayoutData columns="3" />
+        </f:layoutData>
+        <f:header>
+        <card:Header title="单据动态" statusText="显示最近10条"/>
+        </f:header>
+        <f:content>
+        <List
+            showSeparators="True"
+            items="{path: '/orders'}"
+            class="sapUiTinyMarginBeginEnd">
+            <CustomListItem >
+            <VBox class="sapUiTinyMarginBegin sapUiTinyMarginTopBottom" >
+                <HBox
+                alignItems="Center"
+                justifyContent="SpaceBetween">
+                    <Title level="H4" text="{type}" class="orderTitle sapUiTinyMarginEnd"/>
+                    <Text text="{date}" class="orderDate sapUiTinyMarginEnd"/>
+                </HBox>
+                <HBox
+                alignItems="Center"
+                justifyContent="SpaceBetween">
+                <VBox>
+                <Text text="{submittor}" class="orderSubmittor sapUiTinyMarginEnd"/>
+                <HBox >
+                <Text text="{amount}" class="orderAmount"/>
+                <Text text="{currency}" class="orderCurrency sapUiTinyMarginEnd"/>
+                </HBox>
+                </VBox>
+
+                <ObjectStatus
+                inverted="true"
+                icon="{statusIcon}"
+                class="sapUiTinyMargin sapUiSmallMarginEnd"
+                text="{status}"
+                state="{statusSchema}" />
+                </HBox>
+
+            </VBox>
+
+            </CustomListItem>
+        </List>
+        </f:content>
+    </f:Card>
+    </f:GridContainer>
+</core:FragmentDefinition>

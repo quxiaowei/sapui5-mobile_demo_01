@@ -1,0 +1,24 @@
+<mvc:View controllerName="mobiledemo.controller.Main"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:f="sap.f"
+	xmlns:card="sap.f.cards"
+	xmlns:core="sap.ui.core"
+  xmlns:grid="sap.ui.layout.cssgrid"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page id="page" title="报销平台" showHeader="false" >
+    <content>
+    <VBox class="sapUiSmallMarginTop" >
+
+      <Title level="H1" text="你好！" class="sapUiTinyMargin" />
+
+      <!-- <mvc:XMLView viewName="mobiledemo.view.Sub4SmallScreen"></mvc:XMLView> -->
+      <!-- <mvc:XMLView viewName="mobiledemo.view.Sub4LargeScreen"></mvc:XMLView> -->
+      <!-- <mvc:XMLView id="subArea"></mvc:XMLView> -->
+      
+      <VBox id="subArea">
+      </VBox>
+    </VBox>
+    </content>
+  </Page>
+</mvc:View>
