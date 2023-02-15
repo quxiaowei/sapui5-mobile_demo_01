@@ -5,7 +5,8 @@
         xmlns:card="sap.f.cards" 
         xmlns:grid="sap.ui.layout.cssgrid" 
         id="demoGrid" class="sapUiSmallMargin"
-        minHeight="40px">
+        minHeight="40px"
+        snapToRow="true">
         
     <f:layout>
         <f:GridContainerSettings rowSize="40px" columnSize="80px" gap="8px" />
@@ -114,6 +115,79 @@
                 iconSrc="sap-icon://approvals"
                 iconBackgroundColor="Accent1"/>
         </f:header>
+        <f:content>
+        <List
+            showSeparators="True"
+            items="{path: '/orders'}"
+            class="sapUiTinyMarginBeginEnd">
+            <CustomListItem >
+            <VBox class="sapUiTinyMarginBegin sapUiTinyMarginTopBottom" >
+                <HBox
+                alignItems="Center"
+                justifyContent="SpaceBetween">
+                    <Title level="H4" text="{type}" class="orderTitle sapUiTinyMarginEnd"/>
+                    <Text text="{date}" class="orderDate sapUiTinyMarginEnd"/>
+                </HBox>
+                <HBox
+                alignItems="Center"
+                justifyContent="SpaceBetween">
+                <VBox>
+                <Text text="{submittor}" class="orderSubmittor sapUiTinyMarginEnd"/>
+                <HBox >
+                <Text text="{amount}" class="orderAmount"/>
+                <Text text="{currency}" class="orderCurrency sapUiTinyMarginEnd"/>
+                </HBox>
+                </VBox>
+                </HBox>
+
+            </VBox>
+
+            </CustomListItem>
+        </List>
+        </f:content>
+    </f:Card>
+
+
+    <!-- 我发起 -->
+    <f:Card  class="sapUiTinyMarginBottom">
+        <f:layoutData>
+        <f:GridContainerItemLayoutData columns="3" />
+        </f:layoutData>
+        <f:header>
+        <card:Header title="我发起" subtitle="共三条" statusText="3"
+                iconSrc="sap-icon://opportunities"
+                iconBackgroundColor="Accent2"/>
+        </f:header>
+        <f:content>
+        <List
+            showSeparators="True"
+            items="{path: '/orders'}"
+            class="sapUiTinyMarginBeginEnd">
+            <CustomListItem >
+            <VBox class="sapUiTinyMarginBegin sapUiTinyMarginTopBottom" >
+                <HBox
+                alignItems="Center"
+                justifyContent="SpaceBetween">
+                    <Title level="H4" text="{type}" class="orderTitle sapUiTinyMarginEnd"/>
+                    <Text text="{date}" class="orderDate sapUiTinyMarginEnd"/>
+                </HBox>
+                <HBox
+                alignItems="Center"
+                justifyContent="SpaceBetween">
+                <VBox>
+                <Text text="{submittor}" class="orderSubmittor sapUiTinyMarginEnd"/>
+                <HBox >
+                <Text text="{amount}" class="orderAmount"/>
+                <Text text="{currency}" class="orderCurrency sapUiTinyMarginEnd"/>
+                </HBox>
+                </VBox>
+                </HBox>
+
+            </VBox>
+
+            </CustomListItem>
+        </List>
+        </f:content>
     </f:Card>
 
     <!-- <f:Card class="sapUiTinyMarginBottom">

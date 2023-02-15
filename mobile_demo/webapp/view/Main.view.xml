@@ -8,9 +8,9 @@
   xmlns:mvc="sap.ui.core.mvc">
   <Page id="page" title="报销平台" showHeader="false" >
     <content>
-    <VBox class="sapUiSmallMarginTop" >
+    <VBox class="sapUiSmallMarginTop " >
 
-      <Title level="H1" text="你好！" class="sapUiTinyMargin" />
+      <Title level="H1" text="你好！" class="sapUiTinyMargin sapUiMediumMarginBegin" />
 
       <!-- <mvc:XMLView viewName="mobiledemo.view.Sub4SmallScreen"></mvc:XMLView> -->
       <!-- <mvc:XMLView viewName="mobiledemo.view.Sub4LargeScreen"></mvc:XMLView> -->
