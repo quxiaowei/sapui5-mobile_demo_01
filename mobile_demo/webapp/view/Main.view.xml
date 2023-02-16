@@ -10,7 +10,7 @@
     <content>
     <VBox class="sapUiSmallMarginTop " >
 
-      <Title level="H1" text="你好！" class="sapUiTinyMargin sapUiMediumMarginBegin" />
+      <Title level="H1" text="你好！" class="sapUiTinyMarginTop sapUiMediumMarginBegin" />
 
       <!-- <mvc:XMLView viewName="mobiledemo.view.Sub4SmallScreen"></mvc:XMLView> -->
       <!-- <mvc:XMLView viewName="mobiledemo.view.Sub4LargeScreen"></mvc:XMLView> -->
