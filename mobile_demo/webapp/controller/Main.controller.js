@@ -9,8 +9,16 @@ sap.ui.define([
         "use strict";
         return Controller.extend("mobiledemo.controller.Main", {
             onInit: function () {
+                var deviceModel = this.getOwnerComponent().getModel("device");
+    
+                var os = deviceModel.getProperty("/os/name") //win mac linux iOS Android
+                var supportTouch = deviceModel.getProperty("/support/touch") //true false
+                var isDesktop = deviceModel.getProperty("/system/desktop") //true false
+                var isPhone = deviceModel.getProperty("/system/phone") //true false
+                var isTablet = deviceModel.getProperty("/system/tablet") //true false
+
                 var oView = this.getView().byId("subArea");
-                if(window.outerWidth > 500){
+                if(!isPhone){ //window.outerWidth > 500){
                     Fragment.load({
                         name: "mobiledemo.fragment.SubGridLayout"
                     }).then(function(oFragment) {
