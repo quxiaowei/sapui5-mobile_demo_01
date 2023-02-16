@@ -6,8 +6,8 @@
 	xmlns:core="sap.ui.core"
   xmlns:grid="sap.ui.layout.cssgrid"
   xmlns:mvc="sap.ui.core.mvc">
-  <Page id="page" title="报销平台" showHeader="false" >
-    <content>
+  <!-- <Page id="page" title="报销平台" showHeader="false" >
+    <content> -->
     <VBox class="sapUiSmallMarginTop " >
 
       <Title level="H1" text="你好！" class="sapUiTinyMarginTop sapUiMediumMarginBegin" />
@@ -19,6 +19,6 @@
       <VBox id="subArea">
       </VBox>
     </VBox>
-    </content>
-  </Page>
+    <!-- </content>
+  </Page> -->
 </mvc:View>

@@ -87,26 +87,38 @@
         "viewType": "XML",
         "async": true,
         "viewPath": "mobiledemo.view",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "clearControlAggregation": false
+        "controlId": "c01",
+        "controlAggregation": "content",
+        "transition": "slide",
+        "clearControlAggregation": true,
+        "bypassed": {
+          "target": "notFound"
+				}
       },
       "routes": [
         {
-          "name": "RouteMain",
-          "pattern": ":?query:",
-          "target": [
-            "TargetMain"
-          ]
+          "pattern": "",
+          "name": "home",
+          "target": [ "home" ]
+        },
+        {
+          "name": "detail",
+          "pattern": "detail",
+          "target": [ "detail" ]
         }
       ],
       "targets": {
-        "TargetMain": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "Main",
-          "viewName": "Main"
+        "home": {
+					"viewName": "Main",
+					"viewId": "Main"
+        },
+				"notFound": {
+					"viewName": "Detail",
+					"viewId": "Detail"
+				},
+        "detail":{
+					"viewName": "Detail",
+					"viewId": "Detail"
         }
       }
     },
@@ -114,7 +126,7 @@
       "viewName": "mobiledemo.view.App",
       "type": "XML",
       "async": true,
-      "id": "App"
+      "id": "pageContaner1"
     }
   }
 }

@@ -1,7 +1,24 @@
 <mvc:View controllerName="mobiledemo.controller.App"
-    xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <App id="app">
-    </App>
+  xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+  xmlns:mvc="sap.ui.core.mvc" 
+  xmlns:grid="sap.ui.layout.cssgrid" 
+  displayBlock="true">
+  <App id="app">
+    <l:FixFlex id="pageContaner1" fixFirst="false" class="fixFlexVertical">
+      <l:flexContent>
+			  <ScrollContainer id="c01" height="100%" vertical="true" />
+      </l:flexContent>
+      <l:fixContent>
+        <grid:CSSGrid
+            gridTemplateColumns="1fr 1fr 1fr 1fr"
+            gridGap="2px">
+          <Button icon="sap-icon://home" press="onHome" class="bButton sapUiTinyMargin"/>
+          <Button icon="sap-icon://newspaper" press="onDetail" class="bButton sapUiTinyMargin"/>
+          <Button icon="sap-icon://customer-briefing" press="onDetail" class="bButton sapUiTinyMargin"/>
+          <Button icon="sap-icon://account" press="onDetail" class="bButton sapUiTinyMargin"/>
+        </grid:CSSGrid>
+      </l:fixContent>
+    </l:FixFlex>
+  </App>
 </mvc:View>

@@ -6,7 +6,7 @@
         xmlns:grid="sap.ui.layout.cssgrid" 
         id="demoGrid" class="sapUiSmallMargin"
         minHeight="40px"
-        snapToRow="true">
+        snapToRow="false">
         
     <f:layout>
         <f:GridContainerSettings rowSize="40px" columnSize="80px" gap="8px" />
