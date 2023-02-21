@@ -20,12 +20,14 @@ sap.ui.define([
                 var isTablet = deviceModel.getProperty("/system/tablet") //true false
 
                 var oView = this.getView().byId("subArea");
-                if(!isPhone){ //window.outerWidth > 500){
+
+                if(!isPhone) { //window.outerWidth > 500){
                     Fragment.load({
                         name: "mobiledemo.fragment.SubGridLayout"
                     }).then(function(oFragment) {
                         oView.addAggregation("items", oFragment)
                     });
+
                 }else{
                     Fragment.load({
                         name: "mobiledemo.fragment.SubVBoxLayout"

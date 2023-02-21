@@ -87,7 +87,7 @@
         "viewType": "XML",
         "async": true,
         "viewPath": "mobiledemo.view",
-        "controlId": "c01",
+        "controlId": "page",
         "controlAggregation": "content",
         "transition": "slide",
         "clearControlAggregation": true,
@@ -105,6 +105,16 @@
           "name": "detail",
           "pattern": "detail",
           "target": [ "detail" ]
+        },
+        {
+          "name": "detail1",
+          "pattern": "detail1",
+          "target": [ "detailOne" ]
+        },
+        {
+          "name": "detail2",
+          "pattern": "detail2",
+          "target": [ "detailTwo" ]
         }
       ],
       "targets": {
@@ -119,6 +129,14 @@
         "detail":{
 					"viewName": "Detail",
 					"viewId": "Detail"
+        },
+        "detailOne":{
+					"viewName": "DetailOne",
+					"viewId": "DetailOne"
+        },
+        "detailTwo":{
+					"viewName": "DetailTwo",
+					"viewId": "DetailTwo"
         }
       }
     },
@@ -126,7 +144,7 @@
       "viewName": "mobiledemo.view.App",
       "type": "XML",
       "async": true,
-      "id": "pageContaner1"
+      "id": "pageContaner"
     }
   }
 }

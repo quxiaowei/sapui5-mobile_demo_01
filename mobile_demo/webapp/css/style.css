@@ -24,10 +24,21 @@
     margin-left:5px;
 }
 
-.bButton{
+.bButton>span.sapMBtnInner{
     background-color: transparent;
+    border: none;
 }
 
-#application-mobiledemo-display-component---pageContaner1--pageContaner1{
+.bButton>span.sapMBtnInner:hover{
+    background-color: transparent;
+    border: none;
+}
+
+#application-mobiledemo-display-component---pageContaner--pageContaner{
     width:100%;
+}
+
+#application-mobiledemo-display-component---pageContaner--pageContaner-Fixed{
+    background-color: white;
+    border-top: 1px solid #dadada;
 }

@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="mobiledemo.controller.Detail"
+	controllerName="mobiledemo.controller.DetailOne"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	displayBlock="true"
@@ -9,7 +9,7 @@
 
   <!-- <Page id="page" title="另一个界面" showHeader="false" >
     <content> -->
-    <Title level="H1" text="news: 啥也没有" class="sapUiSmallMargin"/>
+    <Title level="H1" text="contact: 啥也没有" class="sapUiSmallMargin"/>
     <!-- </content> -->
   <!-- </Page> -->
 </mvc:View>

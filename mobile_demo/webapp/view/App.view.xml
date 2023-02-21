@@ -5,18 +5,19 @@
   xmlns:grid="sap.ui.layout.cssgrid" 
   displayBlock="true">
   <App id="app">
-    <l:FixFlex id="pageContaner1" fixFirst="false" class="fixFlexVertical">
+    <l:FixFlex id="pageContaner" fixFirst="false" vertical="true" class="fixFlexVertical">
       <l:flexContent>
-			  <ScrollContainer id="c01" height="100%" vertical="true" />
+			  <ScrollContainer id="page" height="100%" vertical="true" />
       </l:flexContent>
-      <l:fixContent>
+      <l:fixContent >
         <grid:CSSGrid
+            id="bButtonBar"
             gridTemplateColumns="1fr 1fr 1fr 1fr"
             gridGap="2px">
           <Button icon="sap-icon://home" press="onHome" class="bButton sapUiTinyMargin"/>
           <Button icon="sap-icon://newspaper" press="onDetail" class="bButton sapUiTinyMargin"/>
-          <Button icon="sap-icon://customer-briefing" press="onDetail" class="bButton sapUiTinyMargin"/>
-          <Button icon="sap-icon://account" press="onDetail" class="bButton sapUiTinyMargin"/>
+          <Button icon="sap-icon://customer-briefing" press="onDetailOne" class="bButton sapUiTinyMargin"/>
+          <Button icon="sap-icon://account" press="onDetailTwo" class="bButton sapUiTinyMargin"/>
         </grid:CSSGrid>
       </l:fixContent>
     </l:FixFlex>

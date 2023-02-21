@@ -12,13 +12,13 @@
         <f:GridContainerSettings rowSize="40px" columnSize="80px" gap="8px" />
     </f:layout>
     <f:layoutM>
-        <f:GridContainerSettings rowSize="35px" columnSize="70px" gap="8px" />
+        <f:GridContainerSettings rowSize="40px" columnSize="80px" gap="8px" />
     </f:layoutM>
     <f:layoutS>
-        <f:GridContainerSettings rowSize="35px" columnSize="70px" gap="8px" />
+        <f:GridContainerSettings rowSize="40px" columnSize="80px" gap="8px" />
     </f:layoutS>
     <f:layoutXS>
-        <f:GridContainerSettings rowSize="35px" columnSize="70px" gap="8px" />
+        <f:GridContainerSettings rowSize="40px" columnSize="80px" gap="8px" />
     </f:layoutXS>
 
     <!-- <f:Card  class="sapUiTinyMarginBottom">
