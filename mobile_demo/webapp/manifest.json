@@ -102,6 +102,11 @@
           "target": [ "home" ]
         },
         {
+          "name": "dispatch",
+          "pattern": "dispatch",
+          "target": ["dispatch"]
+        },
+        {
           "name": "detail",
           "pattern": "detail",
           "target": [ "detail" ]
@@ -121,6 +126,10 @@
         "home": {
 					"viewName": "Main",
 					"viewId": "Main"
+        },
+        "dispatch": {
+          "viewName": "Dispatch",
+          "viewId": "Dispatch"
         },
 				"notFound": {
 					"viewName": "Detail",

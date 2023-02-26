@@ -1,0 +1,15 @@
+<mvc:View
+	controllerName="mobiledemo.controller.Dispatch"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+
+  <!-- <Page id="page" title="另一个界面" showHeader="false" >
+    <content> -->
+    <Title level="H1" text="派遣单" class="sapUiSmallMargin"/>
+    <!-- </content> -->
+  <!-- </Page> -->
+</mvc:View>

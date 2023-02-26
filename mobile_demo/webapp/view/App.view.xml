@@ -14,10 +14,10 @@
             id="bButtonBar"
             gridTemplateColumns="1fr 1fr 1fr 1fr"
             gridGap="2px">
-          <Button icon="sap-icon://home" press="onHome" class="bButton sapUiTinyMargin"/>
-          <Button icon="sap-icon://newspaper" press="onDetail" class="bButton sapUiTinyMargin"/>
-          <Button icon="sap-icon://customer-briefing" press="onDetailOne" class="bButton sapUiTinyMargin"/>
-          <Button icon="sap-icon://account" press="onDetailTwo" class="bButton sapUiTinyMargin"/>
+          <Button id="home" icon="sap-icon://home" press="onHome" class="bButton sapUiTinyMargin"/>
+          <Button id="news" icon="sap-icon://newspaper" press="onDetail" class="bButton sapUiTinyMargin"/>
+          <Button id="detail" icon="sap-icon://customer-briefing" press="onDetailOne" class="bButton sapUiTinyMargin"/>
+          <Button id="contacts" icon="sap-icon://account" press="onDetailTwo" class="bButton sapUiTinyMargin"/>
         </grid:CSSGrid>
       </l:fixContent>
     </l:FixFlex>

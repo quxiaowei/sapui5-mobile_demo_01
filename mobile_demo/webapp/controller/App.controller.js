@@ -1,50 +1,43 @@
-sap.ui.define(
-    [
-        "sap/ui/core/mvc/Controller",
-        "sap/ui/core/UIComponent"
-    ],
-    function(BaseController, UIComponent) {
-      "use strict";
-  
-      return BaseController.extend("mobiledemo.controller.controller.App", {
-        onInit() {
-          
-        },
+sap.ui.define([
+    "mobiledemo/controller/BaseController"
+], function(Controller) {
+    "use strict";
+    return Controller.extend("mobiledemo.controller.controller.App", {
+        onInit: function(){ },
 
         /**
          * @override
          */
         onBeforeRendering: function() {
-          // BaseController.prototype.onBeforeRendering.apply(this, arguments);
-          var deviceModel = this.getOwnerComponent().getModel("device");
-          var isPhone = deviceModel.getProperty("/system/phone") //true false
-          if(!isPhone){
-            var oFixFlex = this.getView().byId("pageContaner");
-            oFixFlex.setVertical(false);
-            oFixFlex.setFixFirst(true);
+            // BaseController.prototype.onBeforeRendering.apply(this, arguments);
+            var deviceModel = this.getModel("device");
+            var isPhone = deviceModel.getProperty("/system/phone"); //true false
 
-            var oButtonBar = this.getView().byId("bButtonBar");
-            oButtonBar.setGridTemplateColumns("1fr")
-          }
-        
+            if(!isPhone){
+                var oFixFlex = this.getView().byId("pageContaner");
+                oFixFlex.setVertical(false);
+                oFixFlex.setFixFirst(true);
+
+                var oButtonBar = this.getView().byId("bButtonBar");
+                oButtonBar.setGridTemplateColumns("1fr")
+            }
         },
 
         onHome: function(){
-			    UIComponent.getRouterFor(this).navTo("home");
+            this.getRouter().navTo("home");
         },
 
         onDetail: function(){
-			    UIComponent.getRouterFor(this).navTo("detail");
+            this.getRouter().navTo("detail");
         },
 
         onDetailOne: function(){
-			    UIComponent.getRouterFor(this).navTo("detail1");
+            this.getRouter().navTo("detail1");
         },
 
         onDetailTwo: function(){
-			    UIComponent.getRouterFor(this).navTo("detail2");
-        },
-      });
-    }
-  );
+            this.getRouter().navTo("detail2");
+        }
+    });
+});
   

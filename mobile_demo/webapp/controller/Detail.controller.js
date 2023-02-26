@@ -1,28 +1,10 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
-	"sap/ui/core/routing/History",
-	"sap/ui/core/UIComponent"
-], function(
-	Controller, History, UIComponent
-) {
-	"use strict";
+    // "sap/ui/core/mvc/Controller",
+    "mobiledemo/controller/BaseController"
+], function(Controller) {
 
-	return Controller.extend("mobiledemo.controller.Detail", {
-        getRouter : function () {
-            return UIComponent.getRouterFor(this);
-        },
+    "use strict";
+    return Controller.extend("mobiledemo.controller.Detail", {
 
-        onNavBack: function () {
-            var oHistory, sPreviousHash;
-
-            oHistory = History.getInstance();
-            sPreviousHash = oHistory.getPreviousHash();
-
-            if (sPreviousHash !== undefined) {
-                window.history.go(-1);
-            } else {
-                this.getRouter().navTo("home", {}, true /*no history*/);
-            }
-        }
-	});
+    });
 });

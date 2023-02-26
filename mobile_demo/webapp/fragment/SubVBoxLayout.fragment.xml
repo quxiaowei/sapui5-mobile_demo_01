@@ -7,12 +7,6 @@
     id="mainFuncs" 
     class="sapUiTinyMargin">
 
-    <!-- <f:Card  class="sapUiTinyMarginBottom">
-      <f:content>
-        <Text text="text2" class="sapUiTinyMargin"></Text>
-      </f:content>
-    </f:Card> -->
-
     <!-- 主功能区 -->
     <f:Card class="sapUiTinyMarginBottom mainFuncContainer">
       <f:content>
@@ -56,7 +50,9 @@
               src="sap-icon://map-3"
               displaySize="XS"
               displayShape="Circle"
-              backgroundColor="Accent5"/>
+              backgroundColor="Accent5"
+              showBorder="true"
+              press=".onPressDispatch"/>
           <Text text="派遣单" class="mainFuncItem" textAlign="Center"></Text>
           </VBox>
           <VBox class="mainFuncItemOutter sapUiTinyMargin">
@@ -115,7 +111,7 @@
       </f:header>
       <f:content>
         <List
-          showSeparators="True"
+          showSeparators="All"
           items="{path: '/orders'}"
           class="sapUiTinyMarginBeginEnd">
           <CustomListItem >

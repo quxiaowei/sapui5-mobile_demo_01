@@ -1,56 +1,41 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "mobiledemo/controller/BaseController",
     "sap/ui/core/Fragment",
-	"sap/ui/core/routing/History",
-	"sap/ui/core/UIComponent"
-],
-    /**
-     * @param {typeof sap.ui.core.mvc.Controller} Controller
-     */
-    function (Controller, Fragment, History, UIComponent) {
-        "use strict";
-        return Controller.extend("mobiledemo.controller.Main", {
-            onInit: function () {
-                var deviceModel = this.getOwnerComponent().getModel("device");
-    
-                var os = deviceModel.getProperty("/os/name") //win mac linux iOS Android
-                var supportTouch = deviceModel.getProperty("/support/touch") //true false
-                var isDesktop = deviceModel.getProperty("/system/desktop") //true false
-                var isPhone = deviceModel.getProperty("/system/phone") //true false
-                var isTablet = deviceModel.getProperty("/system/tablet") //true false
+], function (Controller, Fragment){
 
-                var oView = this.getView().byId("subArea");
+    "use strict";
+    return Controller.extend("mobiledemo.controller.Main", {
+        onInit: function(){ 
+            var deviceModel = this.getModel("device");
+            var isPhone = deviceModel.getProperty("/system/phone"); //true false
+            this.fragmentName = isPhone ? "mobiledemo.fragment.SubVBoxLayout" : "mobiledemo.fragment.SubGridLayout";
+            this.loadFragment({name:this.fragmentName}).then(function(myFragment){
+                this.fragment = myFragment;
+                var oView = this.byId("subArea");
+                // oView.bindAggregation( "items", { path: "/", factory: fragmentFactory } );
+                oView.addAggregation("items", this.fragment)
+            }.bind(this));
+        },
 
-                if(!isPhone) { //window.outerWidth > 500){
-                    Fragment.load({
-                        name: "mobiledemo.fragment.SubGridLayout"
-                    }).then(function(oFragment) {
-                        oView.addAggregation("items", oFragment)
-                    });
+        onBeforeRendering: function(){
+            // var oView = this.getView().byId("subArea");
 
-                }else{
-                    Fragment.load({
-                        name: "mobiledemo.fragment.SubVBoxLayout"
-                    }).then(function(oFragment) {
-                        oView.addAggregation("items", oFragment)
-                    });
-                }
-            },
-            getRouter : function () {
-                return UIComponent.getRouterFor(this);
-            },
-    
-            onNavBack: function () {
-                var oHistory, sPreviousHash;
-    
-                oHistory = History.getInstance();
-                sPreviousHash = oHistory.getPreviousHash();
-    
-                if (sPreviousHash !== undefined) {
-                    window.history.go(-1);
-                } else {
-                    this.getRouter().navTo("home", {}, true /*no history*/);
-                }
-            }
-        });
+            // alert(1);
+
+            // // if(!isPhone) { //window.outerWidth > 500){
+            // Fragment.load({
+            //     name: this.fragmentName,
+            //     controller: this
+            // }).then(function(oFragment) {
+            //     oView.bindAggregation( "items", { path: "/", factory: function(){return oFragment;} } );
+            // });
+        },
+
+        onExit: function(){},
+
+        onPressDispatch: function(oEvent){
+            // alert(1);
+            this.getRouter().navTo("dispatch");
+        }
     });
+});
