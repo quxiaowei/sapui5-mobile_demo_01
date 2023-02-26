@@ -3,7 +3,7 @@
     xmlns:m="sap.m" 
     xmlns:f="sap.f" 
     xmlns:core="sap.ui.core">
-<m:Panel expandable="true" headerText="行程" expanded="true" class="sapUiTinyMargin">
+<m:Panel expandable="true" headerText="行程" width="auto" expanded="true" class="sapUiTinyMargin">
     <Table 
         id="dispatchDetailTable"
         rows="{/ProductCollection}"
