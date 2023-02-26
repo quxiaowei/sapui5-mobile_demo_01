@@ -1,0 +1,82 @@
+<core:FragmentDefinition 
+    xmlns="sap.ui.table"
+    xmlns:m="sap.m" 
+    xmlns:f="sap.f" 
+    xmlns:core="sap.ui.core">
+<m:Panel expandable="true" headerText="行程" expanded="true" class="sapUiTinyMargin">
+    <Table 
+        id="dispatchDetailTable"
+        rows="{/ProductCollection}"
+        selectionMode="MultiToggle"
+        visibleRowCount="7"
+        paste="onPaste"
+        ariaLabelledBy="title" 
+        rowActionCount="1">
+        <extension>
+            <m:OverflowToolbar style="Clear">
+                <!-- <m:Title id="title" text="行程"/> -->
+                <m:ToolbarSpacer/>
+                <m:Button icon="sap-icon://add" text="新行程" press=".onAddTripTable"/>
+            </m:OverflowToolbar>
+        </extension>
+        <columns>
+            <Column width="10rem">
+                <m:Label text="起程地" />
+                <template>
+                    <m:Input value="123"/>
+                </template>
+            </Column>
+            <Column width="10rem">
+                <m:Label text="起程日期" />
+                <template>
+                    <m:DatePicker id="dateFrom"
+                        value="" valueFormat="yyyy-MM-dd" displayFormat="long"/>
+                </template>
+            </Column>
+            <Column width="10rem" hAlign="End">
+                <m:Label text="到达地" />
+                <template>
+                    <m:Input value="123"/>
+                </template>
+            </Column>
+            <Column width="10rem">
+                <m:Label text="到达日期" />
+                <template>
+                    <m:DatePicker id="dateTo"
+                        value="" valueFormat="yyyy-MM-dd" displayFormat="long"/>
+                </template>
+            </Column>
+            <Column width="10rem">
+                <m:Label text="交通工具" />
+                <template>
+                    <m:Select id="transportation" 
+                        items="{ path: 'domain>/transportation', 
+                            sorter: {path: 'sort'}}">
+                        <core:Item text="{domain>value}" key="{domain>key}"/>
+                    </m:Select>
+                </template>
+            </Column>
+            <Column width="6rem">
+                <m:Label text="是否订票" />
+                <template>
+                    <m:CheckBox />
+                </template>
+            </Column>
+            <Column width="10rem">
+                <m:Label text="车次或航班" />
+                <template>
+                    <m:Input value="123"/>
+                </template>
+            </Column>
+        </columns>
+
+        <rowActionTemplate>
+            <RowAction>
+                <items>
+                <RowActionItem type="Delete" press="onDeleteTripTable" />
+                </items>
+            </RowAction>
+        </rowActionTemplate>
+    </Table>
+</m:Panel>
+</core:FragmentDefinition>

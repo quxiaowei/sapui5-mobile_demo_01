@@ -72,6 +72,18 @@
       "": {
         "type": "sap.ui.model.json.JSONModel",
         "uri": "orders.json"
+      },
+      "blockInfo": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/blockInfo.json"
+      },
+      "bizTripType": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/bizTripType.json"
+      },
+      "domain":{
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/domain.json"
       }
     },
     "resources": {
