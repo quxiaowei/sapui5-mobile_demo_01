@@ -35,7 +35,7 @@
         <core:Title text="派遣单" />
     </f:title> -->
     <f:formContainers>
-        <f:FormContainer>
+        <f:FormContainer  title="抬头" expandable="true">
             <f:FormElement label="板块">
                 <f:fields>
                     <ComboBox id="blockInfo"
