@@ -3,15 +3,16 @@
     xmlns:m="sap.m" 
     xmlns:f="sap.f" 
     xmlns:core="sap.ui.core">
+
 <m:Panel expandable="true" headerText="行程" width="auto" expanded="true" class="sapUiTinyMargin">
     <Table 
         id="dispatchDetailTable"
         rows="{/ProductCollection}"
         selectionMode="MultiToggle"
-        visibleRowCount="7"
+        visibleRowCount="6"
         paste="onPaste"
-        ariaLabelledBy="title" 
-        rowActionCount="1">
+        rowActionCount="1"
+        ariaLabelledBy="title">
         <extension>
             <m:OverflowToolbar style="Clear">
                 <!-- <m:Title id="title" text="行程"/> -->
@@ -33,7 +34,7 @@
                         value="" valueFormat="yyyy-MM-dd" displayFormat="long"/>
                 </template>
             </Column>
-            <Column width="10rem" hAlign="End">
+            <Column width="10rem">
                 <m:Label text="到达地" />
                 <template>
                     <m:Input value="123"/>
@@ -57,7 +58,7 @@
                 </template>
             </Column>
             <Column width="6rem">
-                <m:Label text="是否订票" />
+                <m:Label text="是否订票"/>
                 <template>
                     <m:CheckBox />
                 </template>

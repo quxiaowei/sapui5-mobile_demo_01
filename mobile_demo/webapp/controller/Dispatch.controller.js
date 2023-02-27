@@ -5,11 +5,26 @@ sap.ui.define([
     "use strict";
     return Controller.extend("mobiledemo.controller.Dispatch", {
         onInit: function(){
+            var deviceModel = this.getModel("device");
+            var isPhone = deviceModel.getProperty("/system/phone"); //true false
+
             var model = new sap.ui.model.json.JSONModel();
             this.rows = [{ }];
             model.setData({modelData: this.rows});
-            var oTable = this.byId("dispatchDetailTable")
-            oTable.setModel(model).bindRows("/modelData");
+
+            this.fragmentName = isPhone? "mobiledemo.fragment.SubDispatchTripView" : "mobiledemo.fragment.SubDispatchTableView";
+
+            this.loadFragment({name: this.fragmentName}).then(function(myFragment){
+                this.fragment = myFragment;
+                var oView = this.byId("subArea");
+                oView.addAggregation("items", this.fragment);
+                if(!isPhone){
+                    var oTable = this.byId("dispatchDetailTable");
+                    if(oTable){
+                        oTable.setModel(model).bindRows("/modelData");
+                    }
+                }
+            }.bind(this));
         },
 
         onAddTripTable: function(){

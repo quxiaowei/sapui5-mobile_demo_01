@@ -5,19 +5,22 @@
 	xmlns:f="sap.ui.layout.form"
 	xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
+    xmlns:semantic="sap.f.semantic"
 	displayBlock="true"
 	height="100%"
 	busyIndicatorDelay="0">
 
 <!-- <Title id="_IDGenTitle1" level="H1" text="派遣单" class="sapUiSmallMargin"/> -->
 
-<f:Form id="FormChange354wideDual" editable="true" class="sapUiTinyMargin">
+
+<Panel expandable="true" headerText="派遣单" width="auto" expanded="true" class="sapUiTinyMargin">
+<f:Form id="FormChange354wideDual" editable="true">
     <f:layout>
         <f:ResponsiveGridLayout
             labelSpanXL="4"
             labelSpanL="3"
             labelSpanM="4"
-            labelSpanS="3"
+            labelSpanS="4"
             emptySpanXL="0"
             emptySpanL="4"
             emptySpanM="0"
@@ -25,11 +28,14 @@
             columnsXL="2"
             columnsL="1"
             columnsM="1"
-            adjustLabelSpan="false"
+            adjustLabelSpan="true"
             singleContainerFullSize="false" />
     </f:layout>
+    <!-- <f:title>
+        <core:Title text="派遣单" />
+    </f:title> -->
     <f:formContainers>
-        <f:FormContainer title="派遣单">
+        <f:FormContainer>
             <f:FormElement label="板块">
                 <f:fields>
                     <ComboBox id="blockInfo"
@@ -43,8 +49,7 @@
             <f:FormElement label="出差类型">
                 <f:fields>
                     <Select id="tripType"
-                        items="{ path: 'bizTripType>/type', 
-                            sorter: {path: 'value'}}">
+                        items="{ path: 'bizTripType>/type', sorter: {path: 'value'}}">
                         <core:Item key="{bizTripType>key}" text="{bizTripType>value}" />
                     </Select>
                 </f:fields>
@@ -60,7 +65,7 @@
                 <f:fields>
                     <Select id="province" selectedKey="{Province}">
                         <layoutData>
-                            <l:GridData span="XL1 L2 M2 S4" />
+                            <l:GridData span="XL1 L2 M4 S4" />
                         </layoutData>
                         <items>
                             <core:Item text="北京" key="北京"/>
@@ -73,7 +78,7 @@
 
                     <Select id="city" selectedKey="{city}">
                         <layoutData>
-                            <l:GridData span="XL5 L3 M6 S5" />
+                            <l:GridData span="XL5 L2 M4 S4" />
                         </layoutData>
                         <items>
                             <core:Item text="北京" key="北京"/>
@@ -106,6 +111,10 @@
         </f:FormContainer>
     </f:formContainers>
 </f:Form>
+</Panel>
 
-<core:Fragment fragmentName="mobiledemo.fragment.SubDispatchTableView" type="XML" />
+<!-- <core:Fragment fragmentName="mobiledemo.fragment.SubDispatchTableView" type="XML" /> -->
+<!-- <core:Fragment fragmentName="mobiledemo.fragment.SubDispatchTripView" type="XML" /> -->
+<VBox id="subArea"></VBox>
+
 </mvc:View>
