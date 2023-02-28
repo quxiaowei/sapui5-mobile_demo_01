@@ -1,120 +1,106 @@
-<mvc:View
-	controllerName="mobiledemo.controller.Dispatch"
-	xmlns="sap.m"
-	xmlns:l="sap.ui.layout"
-	xmlns:f="sap.ui.layout.form"
-	xmlns:mvc="sap.ui.core.mvc"
-    xmlns:core="sap.ui.core"
-    xmlns:semantic="sap.f.semantic"
-	displayBlock="true"
-	height="100%"
-	busyIndicatorDelay="0">
+<mvc:View controllerName="mobiledemo.controller.Dispatch" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:ff="sap.f" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <ff:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+        <ff:title>
+            <ff:DynamicPageTitle id="dispatchPageTitle">
+                <ff:heading>
+                    <Title id="dispatchPageTitleInner" level="H5" text="派遣单" />
+                </ff:heading>
+                <ff:actions>
+                    <Button text="Edit" type="Transparent" />
+                    <Button text="Delete" type="Transparent" />
+                    <Button text="Save" type="Transparent" />
+                </ff:actions>
+            </ff:DynamicPageTitle>
+        </ff:title>
 
-<!-- <Title id="_IDGenTitle1" level="H1" text="派遣单" class="sapUiSmallMargin"/> -->
+        <ff:content>
+            <VBox id="dispatchPageContentWrapper">
+                <f:Form id="FormChange354wideDual" editable="true">
+                    <f:layout>
+                        <f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="4" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" adjustLabelSpan="true" singleContainerFullSize="false" />
+                    </f:layout>
+                    <f:title>
+                        <core:Title text="派遣单" />
+                    </f:title>
 
+                    <f:formContainers>
+                        <f:FormContainer title="抬头" expandable="true">
+                            <f:FormElement label="板块">
+                                <f:fields>
+                                    <ComboBox id="blockInfo" items="{ path: 'blockInfo>/blockInfo', 
+                                        sorter: {path: 'value'} }">
+                                        <core:Item key="{blockInfo>key}" text="{blockInfo>value}" />
+                                    </ComboBox>
+                                </f:fields>
+                            </f:FormElement>
 
-<Panel expandable="true" headerText="派遣单" width="auto" expanded="true" class="sapUiTinyMargin">
-<f:Form id="FormChange354wideDual" editable="true">
-    <f:layout>
-        <f:ResponsiveGridLayout
-            labelSpanXL="4"
-            labelSpanL="3"
-            labelSpanM="4"
-            labelSpanS="4"
-            emptySpanXL="0"
-            emptySpanL="4"
-            emptySpanM="0"
-            emptySpanS="0"
-            columnsXL="2"
-            columnsL="1"
-            columnsM="1"
-            adjustLabelSpan="true"
-            singleContainerFullSize="false" />
-    </f:layout>
-    <!-- <f:title>
-        <core:Title text="派遣单" />
-    </f:title> -->
-    <f:formContainers>
-        <f:FormContainer  title="抬头" expandable="true">
-            <f:FormElement label="板块">
-                <f:fields>
-                    <ComboBox id="blockInfo"
-                        items="{ path: 'blockInfo>/blockInfo', 
-                            sorter: {path: 'value'} }">
-                        <core:Item key="{blockInfo>key}" text="{blockInfo>value}" />
-                    </ComboBox>
-                </f:fields>
-            </f:FormElement>
+                            <f:FormElement label="出差类型">
+                                <f:fields>
+                                    <Select id="tripType" items="{ path: 'bizTripType>/type', sorter: {path: 'value'}}">
+                                        <core:Item key="{bizTripType>key}" text="{bizTripType>value}" />
+                                    </Select>
+                                </f:fields>
+                            </f:FormElement>
 
-            <f:FormElement label="出差类型">
-                <f:fields>
-                    <Select id="tripType"
-                        items="{ path: 'bizTripType>/type', sorter: {path: 'value'}}">
-                        <core:Item key="{bizTripType>key}" text="{bizTripType>value}" />
-                    </Select>
-                </f:fields>
-            </f:FormElement>
+                            <f:FormElement label="出差天数">
+                                <f:fields>
+                                    <Input value="{Street}" />
+                                </f:fields>
+                            </f:FormElement>
 
-            <f:FormElement label="出差天数">
-                <f:fields>
-                    <Input value="{Street}" />
-                </f:fields>
-            </f:FormElement>
+                            <f:FormElement label="省/市">
+                                <f:fields>
+                                    <Select id="province" selectedKey="{Province}">
+                                        <layoutData>
+                                            <l:GridData span="XL1 L2 M4 S4" />
+                                        </layoutData>
+                                        <items>
+                                            <core:Item text="北京" key="北京" />
+                                            <core:Item text="天津" key="天津" />
+                                            <core:Item text="河北" key="河北" />
+                                            <core:Item text="河南" key="河南" />
+                                            <core:Item text="江苏" key="江苏" />
+                                        </items>
+                                    </Select>
 
-            <f:FormElement label="省/市">
-                <f:fields>
-                    <Select id="province" selectedKey="{Province}">
-                        <layoutData>
-                            <l:GridData span="XL1 L2 M4 S4" />
-                        </layoutData>
-                        <items>
-                            <core:Item text="北京" key="北京"/>
-                            <core:Item text="天津" key="天津"/>
-                            <core:Item text="河北" key="河北"/>
-                            <core:Item text="河南" key="河南"/>
-                            <core:Item text="江苏" key="江苏"/>
-                        </items>
-                    </Select>
+                                    <Select id="city" selectedKey="{city}">
+                                        <layoutData>
+                                            <l:GridData span="XL5 L2 M4 S4" />
+                                        </layoutData>
+                                        <items>
+                                            <core:Item text="北京" key="北京" />
+                                            <core:Item text="南京" key="南京" />
+                                            <core:Item text="天津" key="天津" />
+                                        </items>
+                                    </Select>
+                                </f:fields>
+                            </f:FormElement>
 
-                    <Select id="city" selectedKey="{city}">
-                        <layoutData>
-                            <l:GridData span="XL5 L2 M4 S4" />
-                        </layoutData>
-                        <items>
-                            <core:Item text="北京" key="北京"/>
-                            <core:Item text="南京" key="南京"/>
-                            <core:Item text="天津" key="天津"/>
-                        </items>
-                    </Select>
-                </f:fields>
-            </f:FormElement>
+                            <f:FormElement label="预算编码">
+                                <f:fields>
+                                    <Input value="{Street}" />
+                                </f:fields>
+                            </f:FormElement>
 
+                            <f:FormElement label="联系电话">
+                                <f:fields>
+                                    <Input value="{Street}" />
+                                </f:fields>
+                            </f:FormElement>
 
-            <f:FormElement label="预算编码">
-                <f:fields>
-                    <Input value="{Street}" />
-                </f:fields>
-            </f:FormElement>
+                            <f:FormElement label="出差事由">
+                                <f:fields>
+                                    <Input value="{Street}" />
+                                </f:fields>
+                            </f:FormElement>
+                        </f:FormContainer>
+                    </f:formContainers>
+                </f:Form>
 
-            <f:FormElement label="联系电话">
-                <f:fields>
-                    <Input value="{Street}" />
-                </f:fields>
-            </f:FormElement>
-
-            <f:FormElement label="出差事由">
-                <f:fields>
-                    <Input value="{Street}" />
-                </f:fields>
-            </f:FormElement>
-
-        </f:FormContainer>
-    </f:formContainers>
-</f:Form>
-</Panel>
-
-<!-- <core:Fragment fragmentName="mobiledemo.fragment.SubDispatchTableView" type="XML" /> -->
-<!-- <core:Fragment fragmentName="mobiledemo.fragment.SubDispatchTripView" type="XML" /> -->
-<VBox id="subArea"></VBox>
-
+                <VBox id="subArea" class="sapUiTinyMargin" />
+                <!-- <core:Fragment fragmentName="mobiledemo.fragment.SubDispatchTableView" type="XML" /> -->
+                <!-- <core:Fragment fragmentName="mobiledemo.fragment.SubDispatchTripView" type="XML" /> -->
+            </VBox>
+        </ff:content>
+    </ff:DynamicPage>
 </mvc:View>

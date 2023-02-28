@@ -39,7 +39,8 @@
 }
 
 #application-mobiledemo-display-component---pageContaner--pageContaner-Fixed{
-    background-color: white;
+    background-color: var(--sapIllus_ObjectFillColor);
     border-top: 1px solid var(--sapContent_Illustrative_Color6);
+    border-right: 1px solid var(--sapContent_Illustrative_Color6);
     /* border-right: 1px solid var(--sapContent_Illustrative_Color6); */
 }

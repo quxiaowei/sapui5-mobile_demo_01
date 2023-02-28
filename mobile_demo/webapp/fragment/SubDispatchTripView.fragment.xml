@@ -1,82 +1,60 @@
-<core:FragmentDefinition
-    xmlns:m="sap.m" 
-	xmlns:f="sap.ui.layout.form"
-    xmlns:core="sap.ui.core">
-
-<m:Panel expandable="true" headerText="行程一" width="auto" expanded="true" class="sapUiTinyMargin">
-<f:Form id="Trip_01" editable="true">
-    <f:layout>
-        <f:ResponsiveGridLayout
-            labelSpanXL="4"
-            labelSpanL="3"
-            labelSpanM="4"
-            labelSpanS="4"
-            emptySpanXL="0"
-            emptySpanL="4"
-            emptySpanM="0"
-            emptySpanS="0"
-            columnsXL="2"
-            columnsL="1"
-            columnsM="1"
-            adjustLabelSpan="false"
-            singleContainerFullSize="false" />
-    </f:layout>
-    <!-- <f:title>
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <!-- <m:Panel expandable="true" headerText="行程一" width="auto" expanded="true" class="sapUiTinyMargin"> -->
+    <f:Form id="Trip_01" editable="true">
+        <f:layout>
+            <f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="4" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" adjustLabelSpan="false" singleContainerFullSize="false" />
+        </f:layout>
+        <!-- <f:title>
         <core:Title text="派遣单" />
-    </f:title> -->
-    <f:formContainers>
-        <f:FormContainer>
+        </f:title> -->
+        <f:formContainers>
+            <f:FormContainer>
+                <f:FormElement label="起程地">
+                    <f:fields>
+                        <m:Input value="123" />
+                    </f:fields>
+                </f:FormElement>
 
-            <f:FormElement label="起程地">
-                <f:fields>
-                    <m:Input value="123"/>
-                </f:fields>
-            </f:FormElement>
+                <f:FormElement label="起程日期">
+                    <f:fields>
+                        <m:DatePicker id="dateFrom" value="" valueFormat="yyyy-MM-dd" displayFormat="long" />
+                    </f:fields>
+                </f:FormElement>
 
-            <f:FormElement label="起程日期">
-                <f:fields>
-                    <m:DatePicker id="dateFrom"
-                        value="" valueFormat="yyyy-MM-dd" displayFormat="long"/>
-                </f:fields>
-            </f:FormElement>
+                <f:FormElement label="到达地">
+                    <f:fields>
+                        <m:Input value="123" />
+                    </f:fields>
+                </f:FormElement>
 
-            <f:FormElement label="到达地">
-                <f:fields>
-                    <m:Input value="123"/>
-                </f:fields>
-            </f:FormElement>
+                <f:FormElement label="到达日期">
+                    <f:fields>
+                        <m:DatePicker id="dateTo" value="" valueFormat="yyyy-MM-dd" displayFormat="long" />
+                    </f:fields>
+                </f:FormElement>
 
-            <f:FormElement label="到达日期">
-                <f:fields>
-                    <m:DatePicker id="dateTo"
-                        value="" valueFormat="yyyy-MM-dd" displayFormat="long"/>
-                </f:fields>
-            </f:FormElement>
-
-            <f:FormElement label="交通工具">
-                <f:fields>
-                    <m:Select id="transportation" 
-                        items="{ path: 'domain>/transportation', 
+                <f:FormElement label="交通工具">
+                    <f:fields>
+                        <m:Select id="transportation" items="{ path: 'domain>/transportation', 
                             sorter: {path: 'sort'}}">
-                        <core:Item text="{domain>value}" key="{domain>key}"/>
-                    </m:Select>
-                </f:fields>
-            </f:FormElement>
+                            <core:Item text="{domain>value}" key="{domain>key}" />
+                        </m:Select>
+                    </f:fields>
+                </f:FormElement>
 
-            <f:FormElement label="是否订票">
-                <f:fields>
-                    <m:CheckBox />
-                </f:fields>
-            </f:FormElement>
+                <f:FormElement label="是否订票">
+                    <f:fields>
+                        <m:CheckBox />
+                    </f:fields>
+                </f:FormElement>
 
-            <f:FormElement label="车次或航班">
-                <f:fields>
-                    <m:Input value="123"/>
-                </f:fields>
-            </f:FormElement>
-
-        </f:FormContainer>
-    </f:formContainers>
-</f:Form>
-</m:Panel>
+                <f:FormElement label="车次或航班">
+                    <f:fields>
+                        <m:Input value="123" />
+                    </f:fields>
+                </f:FormElement>
+            </f:FormContainer>
+        </f:formContainers>
+    </f:Form>
+    <!-- </m:Panel> -->
 </core:FragmentDefinition>
