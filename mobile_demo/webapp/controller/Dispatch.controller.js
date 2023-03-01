@@ -1,6 +1,6 @@
 sap.ui.define([
     "mobiledemo/controller/BaseController"
-], function(Controller) {
+], function(Controller, Fragment) {
     
     "use strict";
     return Controller.extend("mobiledemo.controller.Dispatch", {
@@ -8,30 +8,40 @@ sap.ui.define([
             var deviceModel = this.getModel("device");
             var isPhone = deviceModel.getProperty("/system/phone"); //true false
 
+            console.log("onInit");
+
             this.rows = [{ }];
             this.model = new sap.ui.model.json.JSONModel();
             this.model.setData({modelData: this.rows});
 
-            // alert("onInit");
-
             this.fragmentName = isPhone? "mobiledemo.fragment.SubDispatchTripView" : "mobiledemo.fragment.SubDispatchTableView";
 
-            this.loadFragment({name: this.fragmentName}).then(function(myFragment){
-                
-                // alert("onLoadFragment");
-
+            this.loadFragment({name: this.fragmentName, controller: this}).then(function(myFragment){
+                // console.log(1);
                 this.fragment = myFragment;
                 var oView = this.byId("subArea");
-                oView.addAggregation("items", this.fragment);
-                // if(!isPhone){
-                //     var oTable = this.byId("dispatchDetailTable");
-                //     if(oTable){
-                //         oTable.setModel(this.model).bindRows({path: "/modelData", templateShareable: false});
-                //     }
-                // }
+                oView.addItem(this.fragment);
+                console.log(2);
+                if(!isPhone){
+                    var oTable = this.byId("dispatchDetailTable");
+                    if(oTable){
+                        oTable.setModel(this.model).bindRows({path: "/modelData", templateShareable: false});
+                    }
+                }
             }.bind(this));
+
+            console.log("Init End")
         },
 
+        onBeforeRendering: function() {
+            console.log("Before");
+            var oView = this.byId("subArea");
+            oView.addItem(this.fragment);
+        },
+
+        onAfterRendering: function() {
+            console.log("After")
+        },
 
         onAddTripTable: function(){
             let oTable = this.byId("dispatchDetailTable");

@@ -3,12 +3,8 @@ sap.ui.define([
 ], function(Controller) {
     "use strict";
     return Controller.extend("mobiledemo.controller.controller.App", {
-        onInit: function(){ },
-
-        /**
-         * @override
-         */
-        onBeforeRendering: function() {
+        onInit: function(){ 
+            console.log("app.init");
             // BaseController.prototype.onBeforeRendering.apply(this, arguments);
             var deviceModel = this.getModel("device");
             var isPhone = deviceModel.getProperty("/system/phone"); //true false
@@ -20,7 +16,14 @@ sap.ui.define([
 
                 var oButtonBar = this.getView().byId("bButtonBar");
                 oButtonBar.setGridTemplateColumns("1fr")
-            }
+            } 
+        },
+
+        /**
+         * @override
+         */
+        onBeforeRendering: function() {
+            console.log("app.before");
         },
 
         onHome: function(){

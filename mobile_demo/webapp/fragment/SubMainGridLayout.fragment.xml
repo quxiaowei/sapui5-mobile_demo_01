@@ -120,7 +120,7 @@
             </f:header>
             <f:content>
             <List
-                showSeparators="true"
+                showSeparators="All"
                 items="{path: '/orders'}"
                 class="sapUiTinyMarginBeginEnd">
                 <CustomListItem >
@@ -167,7 +167,7 @@
             </f:header>
             <f:content>
             <List
-                showSeparators="true"
+                showSeparators="All"
                 items="{path: '/orders'}"
                 class="sapUiTinyMarginBeginEnd">
                 <CustomListItem >
@@ -219,7 +219,7 @@
             </f:header>
             <f:content>
             <List
-                showSeparators="true"
+                showSeparators="All"
                 items="{path: '/orders'}"
                 class="sapUiTinyMarginBeginEnd">
                 <CustomListItem >
